@@ -43,13 +43,29 @@ def selection_sort(seznam,direction = "asc"):
                         max_indx = j
                 seznam[i],seznam[max_indx] = seznam[max_indx],seznam[i]
     return seznam
+
+
+def bubble_sort(number_array):
+    """
+
+    :param number_array: list of nambrz
+    :return: sorted numberz list
+    """
+    n = len(number_array)
+    for i in range(n-1):
+        for j in range(0,n-i-1):
+            if number_array[j] > number_array[j+1]:
+                number_array[j],number_array[j+1] = number_array[j+1],number_array[j]
+    return number_array
+
+
 def main():
     data = read_data("numbers.csv")
-
     # print(data["series_1"])
-
     select = selection_sort(data["series_1"],"asc")
-    print(select)
+    # print(select)
+    bubl = bubble_sort(data["series_2"])
+    # print(bubl)
     pass
 
 
